@@ -10,7 +10,7 @@ const delay = 2500;
 
 export default function SlideShow() {
 	const [index, setIndex] = useState(0);
-	const timeoutRef = useRef(null);
+	const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
 	function resetTimeout() {
 		if (timeoutRef.current) {
@@ -21,10 +21,11 @@ export default function SlideShow() {
 	useEffect(() => {
 		resetTimeout();
 		timeoutRef.current = setTimeout(
-			() =>
+			() => {
 				setIndex((prevIndex) =>
 					prevIndex === colors.length - 1 ? 0 : prevIndex + 1
-				),
+				);
+			},
 			delay
 		);
 
