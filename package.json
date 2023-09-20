@@ -11,6 +11,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@babylonjs/core": "^6.21.1",
     "@hookform/resolvers": "^3.3.1",
     "@legendapp/state": "^1.11.1",
     "@radix-ui/react-label": "^2.0.2",

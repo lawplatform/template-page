@@ -13,6 +13,7 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import Searchbar from "./Searchbar"
 
 const components: { title: string; href: string; description: string }[] = [
 	{
@@ -54,8 +55,8 @@ const components: { title: string; href: string; description: string }[] = [
 
 export function NavigationMenuDemo() {
 	return (
-		<NavigationMenu className="bg-blue-200   mx-auto flex flex-row justify-between max-w-5xl" >
-			<div className="w-[200px] bg-red-100"> this is </div>
+		<NavigationMenu className=" bg-blue-200 fixed flex flex-col sm:flex-row justify-between " >
+			<Searchbar msg={"memehiem"} />
 			<NavigationMenuList className="bg-green-100">
 				<NavigationMenuItem>
 					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
