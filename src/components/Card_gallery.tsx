@@ -17,7 +17,7 @@ const Card_gallery = ({ msg }: Card_gallery) => {
 
 
 	return (
-		<Card className="w-96 mx-auto">
+		<Card className="w-96 mx-auto transition-opacity duration-150 ease-out transition-transform hover:scale-105">
 			<CardHeader>
 				<CardTitle className="flex justify-center">삼겹살 정복</CardTitle>
 				<CardDescription>맛있는 밥을 먹는5가지 방법</CardDescription>
