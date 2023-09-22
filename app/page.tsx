@@ -4,25 +4,33 @@ import { trpc } from './_trpc/client'
 import SlideShow from '@/src/components/SlideShow';
 import Login from '@/src/components/login';
 import Card_gallery from '@/src/components/Card_gallery';
-import Mymenu from '@/src/components/Mymenu';
+import ToggleMenuViaSize from '@/src/components/ToggleMenuViaSize';
+import Drawer from '@/src/components/Drawer';
+import { useState } from 'react';
+import Card_Mini from "@/src/components/Card_Mini";
 
 export default function Home() {
 	const getTodos = trpc.getTodos.useQuery();
+
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<div>
 			{JSON.stringify(getTodos.data)}
-			<p>This is just template page..!</p>
+			<p>This is just template page...!</p>
 			<Button variant="outline">Button</Button>
 			<SlideShow ></SlideShow>
 			<div className='w-1/2 mx-auto'>
 				<Login />
 			</div>
 			<div>
-				<Mymenu></Mymenu>
+				<ToggleMenuViaSize />
 			</div>
 			<div>
-				<Card_gallery msg="hi"></Card_gallery>
+				<Card_Mini></Card_Mini>
 			</div>
+
+
 		</div>
 	)
 }

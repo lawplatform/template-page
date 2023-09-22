@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useState } from "react";
 
-interface Mymenu {
+interface ToggleMenuViaSizeProps {
 	msg: String
 }
-const Mymenu: React.Fc<Mymenu> = ({ msg }) => {
+const ToggleMenuViaSize: React.Fc<ToggleMenuViaSizeProps> = ({ msg }) => {
 	const [isMobile, setIsMobile] = useState(false);
 	useEffect(() => {
 		const handleResize = () => {
@@ -28,4 +28,4 @@ const Mymenu: React.Fc<Mymenu> = ({ msg }) => {
 	</div>
 	);
 }
-export default Mymenu
+export default ToggleMenuViaSize;

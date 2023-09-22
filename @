@@ -1,0 +1,12 @@
+"use client";
+import { useState } from "react";
+
+export default function MyNav() {
+	const [isOpen, setIsOpen] = useState(false);
+	const toggle = () => {
+		setIsOpen(!isOpen);
+	};
+	return (
+		<div>This is new Div</div>
+	)
+}
