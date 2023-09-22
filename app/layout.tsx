@@ -44,7 +44,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Provider>
 					<div className="text-center flex-flex-col">
-						<div className='h-5 mx-auto '><MyNav /></div>
+						<div className='h-5 mx-auto '></div>
 						<div>
 							{children}
 						</div>
