@@ -43,7 +43,7 @@ export default function SlideShow() {
 			>
 				{colors.map((backgroundColor, index) => (
 					<div
-						className="slide"
+						className="w-full h-96 inline-block rounded-xl"
 						key={index}
 						style={{ backgroundColor }}
 					></div>

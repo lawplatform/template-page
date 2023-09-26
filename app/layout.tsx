@@ -3,7 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Provider from './_trpc/Provider';
-import MyNav from '@/src/components/NavigationTemp';
+import Navbar from '@/src/components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -44,7 +44,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Provider>
 					<div className="text-center flex-flex-col">
-						<div className='h-5 mx-auto '></div>
+						<div className='h-20 '><Navbar /></div>
 						<div>
 							{children}
 						</div>

@@ -8,6 +8,8 @@ import ToggleMenuViaSize from '@/src/components/ToggleMenuViaSize';
 import Drawer from '@/src/components/Drawer';
 import { useState } from 'react';
 import Card_Mini from "@/src/components/Card_Mini";
+import Divider from '@/src/components/Divider';
+import Card_list from '@/src/components/Card_list';
 
 export default function Home() {
 	const getTodos = trpc.getTodos.useQuery();
@@ -17,20 +19,10 @@ export default function Home() {
 	return (
 		<div>
 			{JSON.stringify(getTodos.data)}
-			<p>This is just template page...!</p>
-			<Button variant="outline">Button</Button>
-			<SlideShow ></SlideShow>
-			<div className='w-1/2 mx-auto'>
-				<Login />
+			<div className='flex flex-col  items-center'>
+				<p>hellow </p>
+				<Card_list></Card_list>
 			</div>
-			<div>
-				<ToggleMenuViaSize />
-			</div>
-			<div>
-				<Card_Mini></Card_Mini>
-			</div>
-
-
 		</div>
 	)
 }
