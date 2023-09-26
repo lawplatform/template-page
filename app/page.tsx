@@ -20,7 +20,7 @@ export default function Home() {
 		<div>
 			{JSON.stringify(getTodos.data)}
 			<div className='flex flex-col  items-center'>
-				<p>hellow </p>
+				<p>hello...? </p>
 				<Card_list></Card_list>
 			</div>
 		</div>

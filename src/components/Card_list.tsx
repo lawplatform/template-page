@@ -7,11 +7,11 @@ import { Star } from "lucide-react"
 
 export default function Card_list() {
 	return (
-		<div className="bg-red-100 w-full">
+		<div className="bg-red-100 w-full max-w-6xl">
 			<section className=" py-12 md:py-24 lg:py-32">
-				<div className="container flex flex-col items-center gap-8 px-1 ">
-					<div className="flex flew-row w-full bg-zinc-300 justify-between">
-						<h1 className="text-2xl font-bold tracking-tighter text-start">이롭게 하는 교육상담 </h1>
+				<div className=" flex flex-col items-center gap-8 px-1 bg-yellow-200 ">
+					<div className="flex flew-row w-full bg-zinc-300 justify-between px-3">
+						<h1 className="text-2xl sm:text-3xl font-bold tracking-tighter text-start">이롭게 하는 교육상담! </h1>
 						<button onClick={() => console.log("click")}>
 							<Star />
 						</button>
@@ -21,7 +21,7 @@ export default function Card_list() {
 						className="mx-auto p-2 aspect-[1/1] object-cover object-center border-2 rounded-lg"
 						height="100"
 						src="/temp/temp.svg"
-						width="300"
+						width="400"
 					/>
 					<div className="space-y-6 bg-blue-100">
 
@@ -46,13 +46,20 @@ export default function Card_list() {
 						</div>
 					</div>
 					<p className="text-1 text-start font-semibold text-zinc-900 dark:text-zinc-50">￦2500 / 30분 </p>
-					<Button className="w-full h-12 rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
-						신청하기
-					</Button>
 					<p className="text-xs text-zinc-500 dark:text-zinc-400">
-						Fabric: 100% Cotton. Care: Machine wash cold, tumble dry low.
+						주의 : 거래시 주의 문구에 대한 설명..
 					</p>
+
+					<div className="mb-12">this is footer</div>
 				</div >
+				<Button className="w-1/4 mx-auto h-12 hidden sm:block rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
+					신청하기!
+				</Button>
+				<div className="fixed w-full sm:hidden bottom-2 h-12 sm:w-40 ">
+					<Button className="w-full h-12 rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
+						신청하기!?
+					</Button>
+				</div>
 			</section >
 		</div >
 	)

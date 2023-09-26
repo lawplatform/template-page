@@ -57,7 +57,7 @@ ListItem.displayName = "ListItem"
 export default function Navbar() {
 
 	return (
-		<NavigationMenu className=" flex justify-between max-w-5xl mx-auto">
+		<NavigationMenu className=" flex justify-between max-w-6xl mx-auto">
 			<div> <Image src="/logo/logo.png" width={150} height={250} alt="logo Image" className="my-2" /></div>
 			<NavigationMenuList className=" ">
 				<NavigationMenuItem className="hidden">
@@ -65,7 +65,7 @@ export default function Navbar() {
 					<NavigationMenuContent className="">
 						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 							<ListItem href="/docs/primitives/typography" title="Typography">
-								Styles for headings, paragraphs, lists...etc
+								Styles for headings, paragraphs, lists...etc!
 							</ListItem>
 							<ListItem href="/docs/primitives/typography" title="Typography">
 								Styles for headings, paragraphs, lists...etc
