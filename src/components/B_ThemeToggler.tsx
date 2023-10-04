@@ -3,28 +3,21 @@
 import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 import { Switch } from "@/components/ui/switch"
 
-export function B_ThemeToggler() {
-	const [lightMode, setLightMode] = useState(true);
-	const { setTheme } = useTheme()
-	const handleClick = () => {
-		if (lightMode) {
-			setTheme("dark")
-		} else {
-			setTheme("light")
-		}
-		setLightMode(!lightMode);
-	}
+interface B_ThemeTogglerProps {
+	isTrue: boolean;
+	clickEvt: () => void;
+}
+
+export function B_ThemeToggler({ isTrue, clickEvt }: B_ThemeTogglerProps) {
 	return (
 		<div className="my-3 flex flex-row justify-between ">
 			<p >
-				{lightMode ?
-					(<Sun />) :
-					(<Moon />)}
+				{isTrue ? <Sun /> : <Moon />}
 			</p>
-			<Switch id="light-mode" onCheckedChange={handleClick} className="mx-1" />
+			<Switch id="light-mode" onCheckedChange={clickEvt} className="mx-1" />
 		</div>
 	)
 }

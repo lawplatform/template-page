@@ -1,9 +1,9 @@
-"use client"
-import React from "react";
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { cn } from "@/lib/utils"
+"use client";
+import React, { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { cn } from "@/lib/utils";
 import {
 	Sheet,
 	SheetClose,
@@ -13,8 +13,7 @@ import {
 	SheetHeader,
 	SheetTitle,
 	SheetTrigger,
-
-} from "@/components/ui/sheet"
+} from "@/components/ui/sheet";
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -24,11 +23,15 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 	NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
-import Image from 'next/image'
+} from "@/components/ui/navigation-menu";
+import Image from "next/image";
 import { AlignJustify } from "lucide-react";
 import Divider_h from "./Divider_h";
 import { B_ThemeToggler } from "./B_ThemeToggler";
+import { useTheme } from "next-themes";
+import { B_IconToggler } from "./B_IconToggler";
+import { Moon, Sun } from "lucide-react"
+import Logo from "./Logo";
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
 	React.ComponentPropsWithoutRef<"a">
@@ -51,17 +54,30 @@ const ListItem = React.forwardRef<
 				</a>
 			</NavigationMenuLink>
 		</li>
-	)
-})
-ListItem.displayName = "ListItem"
+	);
+});
+ListItem.displayName = "ListItem";
 
 export default function Navbar() {
-
+	const { setTheme } = useTheme();
+	const [lightMode, setLightMode] = useState(true);
+	const [logoColor, setLogoColor] = useState("#6064d4")
+	const themeChange = () => {
+		if (lightMode) {
+			setTheme("dark");
+			setLogoColor("#FFFFFF")
+		} else {
+			setTheme("light");
+			setLogoColor("#6064d4")
+		}
+		setLightMode(!lightMode);
+	};
 	return (
 		<NavigationMenu className=" mx-auto flex max-w-6xl justify-between">
-			<div> <Image src="/logo/logo.png" width={150} height={250} alt="logo Image" className="my-2" /></div>
+			<div>
+				<Logo color={logoColor}></Logo>
+			</div>
 			<NavigationMenuList>
-
 				<NavigationMenuItem className="hidden">
 					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
 					<NavigationMenuContent>
@@ -85,22 +101,28 @@ export default function Navbar() {
 						<SheetContent side={"left"}>
 							<SheetHeader>
 								<SheetTitle className="text-start">로그인</SheetTitle>
-								<SheetDescription>
-									새로운 서비스를 즐겨보세요
-								</SheetDescription>
+								<SheetDescription>새로운 서비스를 즐겨보세요</SheetDescription>
 							</SheetHeader>
 							<div className="grid gap-4 py-4">
 								<div className="grid grid-cols-4 items-center gap-4">
 									<Label htmlFor="name" className="text-right">
 										Name
 									</Label>
-									<Input id="name" value="Pedro Duarte" className="col-span-3" />
+									<Input
+										id="name"
+										value="Pedro Duarte"
+										className="col-span-3"
+									/>
 								</div>
 								<div className="grid grid-cols-4 items-center gap-4">
 									<Label htmlFor="username" className="text-right">
 										Username
 									</Label>
-									<Input id="username" value="@peduarte" className="col-span-3" />
+									<Input
+										id="username"
+										value="@peduarte"
+										className="col-span-3"
+									/>
 								</div>
 							</div>
 							<div> this is other </div>
@@ -109,10 +131,9 @@ export default function Navbar() {
 								<SheetHeader>
 									<SheetTitle className="text-start">테마</SheetTitle>
 									<SheetDescription>
-										<B_ThemeToggler />
+										<B_ThemeToggler isTrue={lightMode} clickEvt={themeChange} />
 									</SheetDescription>
 								</SheetHeader>
-
 							</div>
 							<SheetFooter>
 								<SheetClose asChild>
@@ -124,5 +145,5 @@ export default function Navbar() {
 				</NavigationMenuItem>
 			</NavigationMenuList>
 		</NavigationMenu>
-	)
+	);
 }
