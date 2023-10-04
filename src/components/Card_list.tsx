@@ -3,29 +3,27 @@
  * @see https://v0.dev/t/Xx6DE3L
  */
 import { Button } from "@/components/ui/button"
-import { Star } from "lucide-react"
+import Star from "./Star"
 
 export default function Card_list() {
 	return (
-		<div className="bg-red-100 w-full max-w-6xl">
+		<div className=" bg-red-100 md:max-w-6xl">
 			<section className=" py-12 md:py-24 lg:py-32">
-				<div className=" flex flex-col items-center gap-8 px-1 bg-yellow-200 ">
-					<div className="flex flew-row w-full bg-zinc-300 justify-between px-3">
-						<h1 className="text-2xl sm:text-3xl font-bold tracking-tighter text-start">이롭게 하는 교육상담! </h1>
-						<button onClick={() => console.log("click")}>
-							<Star />
-						</button>
+				<div className=" flex flex-col items-center gap-8 bg-yellow-200 px-1 ">
+					<div className="flew-row flex w-full justify-between bg-zinc-300 px-3">
+						<h1 className="items-center text-start text-2xl font-bold  sm:text-3xl">이롭게 하는 교육상담! </h1>
+						<Star evt={() => console.log("I'm clicked")} />
 					</div>
 					<img
 						alt="Sneaker Image"
-						className="mx-auto p-2 aspect-[1/1] object-cover object-center border-2 rounded-lg"
+						className="mx-auto aspect-[1/1] rounded-lg border-2 object-cover object-center p-2"
 						height="100"
 						src="/temp/temp.svg"
 						width="400"
 					/>
 					<div className="space-y-6 bg-blue-100">
 
-						<div className="bg-green-100 h-screen">
+						<div className="h-screen bg-green-100">
 							<p className="text-base text-zinc-500 dark:text-zinc-400">
 								These classic sneakers are perfect for any occasion. They are comfortable, stylish, and durable. Made with
 								high-quality materials, they are designed to last.
@@ -33,11 +31,11 @@ export default function Card_list() {
 						</div>
 						<div className="flex  items-center justify-end bg-green-100">
 							<div className="ml-4 space-y-1">
-								<p className="text-sm font-medium leading-none text-start">Olivia Martin</p>
-								<p className="text-sm text-muted-foreground text-start">교육전문</p>
+								<p className="text-start text-sm font-medium leading-none">Olivia Martin</p>
+								<p className="text-start text-sm text-muted-foreground">교육전문</p>
 
 							</div>
-							<span className="relative flex shrink-0 overflow-hidden rounded-full h-14 w-14">
+							<span className="relative flex h-14 w-14 shrink-0 overflow-hidden rounded-full">
 								<img className="aspect-square h-full w-full" alt="Avatar" src="/profile/avatar.png" />
 							</span>
 
@@ -52,12 +50,12 @@ export default function Card_list() {
 
 					<div className="mb-12">this is footer</div>
 				</div >
-				<Button className="w-1/4 mx-auto h-12 hidden sm:block rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
+				<Button className="mx-auto hidden h-12 w-1/4 rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900 sm:block">
 					신청하기!
 				</Button>
-				<div className="fixed w-full sm:hidden bottom-2 h-12 sm:w-40 ">
-					<Button className="w-full h-12 rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
-						신청하기!?
+				<div className="fixed bottom-2 h-12 w-full sm:hidden sm:w-40 ">
+					<Button className="h-12 w-full rounded-md bg-zinc-900 text-zinc-50 shadow-sm dark:bg-zinc-50 dark:text-zinc-900">
+						신청하기!?...
 					</Button>
 				</div>
 			</section >

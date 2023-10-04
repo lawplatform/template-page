@@ -12,9 +12,9 @@ export default function Home() {
 		<div>
 			{JSON.stringify(getTodos.data)}
 			<div className='flex flex-col  items-center'>
-				<p>hello. </p>
+				<p className='bg-conssul-100 dark:bg-red-100'>hello. ... my name  </p>
 				<Card_list></Card_list>
 			</div>
-		</div>
+		</div >
 	)
 }

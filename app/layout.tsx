@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Provider from './_trpc/Provider';
 import Navbar from '@/src/components/Navbar';
+import { ThemeProvider } from '@/src/components/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -43,12 +45,20 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<Provider>
-					<div className="text-center flex-flex-col">
-						<div className='h-20 '><Navbar /></div>
-						<div>
-							{children}
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<div className="flex-flex-col text-center">
+							<div className='h-20 '><Navbar /></div>
+							<div>
+								{children}
+							</div>
 						</div>
-					</div>
+						<Toaster />
+					</ThemeProvider>
 				</Provider>
 			</body>
 		</html >

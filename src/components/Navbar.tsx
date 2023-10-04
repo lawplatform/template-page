@@ -28,6 +28,7 @@ import {
 import Image from 'next/image'
 import { AlignJustify } from "lucide-react";
 import Divider_h from "./Divider_h";
+import { B_ThemeToggler } from "./B_ThemeToggler";
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
 	React.ComponentPropsWithoutRef<"a">
@@ -57,12 +58,13 @@ ListItem.displayName = "ListItem"
 export default function Navbar() {
 
 	return (
-		<NavigationMenu className=" flex justify-between max-w-6xl mx-auto">
+		<NavigationMenu className=" mx-auto flex max-w-6xl justify-between">
 			<div> <Image src="/logo/logo.png" width={150} height={250} alt="logo Image" className="my-2" /></div>
-			<NavigationMenuList className=" ">
+			<NavigationMenuList>
+
 				<NavigationMenuItem className="hidden">
 					<NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-					<NavigationMenuContent className="">
+					<NavigationMenuContent>
 						<ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
 							<ListItem href="/docs/primitives/typography" title="Typography">
 								Styles for headings, paragraphs, lists...etc!
@@ -76,11 +78,13 @@ export default function Navbar() {
 				<NavigationMenuItem>
 					<Sheet>
 						<SheetTrigger asChild>
-							<AlignJustify className="w-5 mx-5 sm:hidden" />
+							<div style={{ color: "#6064d4" }}>
+								<AlignJustify className="mx-5 w-5 dark:text-white sm:hidden" />
+							</div>
 						</SheetTrigger>
 						<SheetContent side={"left"}>
 							<SheetHeader>
-								<SheetTitle>로그인</SheetTitle>
+								<SheetTitle className="text-start">로그인</SheetTitle>
 								<SheetDescription>
 									새로운 서비스를 즐겨보세요
 								</SheetDescription>
@@ -101,10 +105,16 @@ export default function Navbar() {
 							</div>
 							<div> this is other </div>
 							<Divider_h />
-							<div> this is other section</div>
+							<div>
+								<SheetHeader>
+									<SheetTitle className="text-start">테마</SheetTitle>
+									<SheetDescription>
+										<B_ThemeToggler />
+									</SheetDescription>
+								</SheetHeader>
+
+							</div>
 							<SheetFooter>
-
-
 								<SheetClose asChild>
 									<Button type="submit">Save changes</Button>
 								</SheetClose>
