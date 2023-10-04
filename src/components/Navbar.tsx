@@ -29,8 +29,6 @@ import { AlignJustify } from "lucide-react";
 import Divider_h from "./Divider_h";
 import { B_ThemeToggler } from "./B_ThemeToggler";
 import { useTheme } from "next-themes";
-import { B_IconToggler } from "./B_IconToggler";
-import { Moon, Sun } from "lucide-react"
 import Logo from "./Logo";
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
