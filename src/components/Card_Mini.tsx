@@ -1,11 +1,11 @@
 import { CardFooter } from "@/components/ui/card";
 import Image from 'next/image'
 
-export default function Card_Mini(second) {
+export default function Card_Mini() {
 	return (
-		<div className="min-h-screen bg-gradient-to-r from-purple-300 via-pink-200 to-red-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 flex items-center justify-center">
-			<div className="w-full max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden dark:bg-zinc-900">
-				<div className="flex justify-between items-center px-6 py-4">
+		<div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-purple-300 via-pink-200 to-red-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700">
+			<div className="mx-auto w-full max-w-md overflow-hidden rounded-lg bg-white shadow-md dark:bg-zinc-900">
+				<div className="flex items-center justify-between px-6 py-4">
 					<div className="flex flex-col items-center">
 						<svg
 							className=" h-6 w-6 text-blue-500"
@@ -23,7 +23,7 @@ export default function Card_Mini(second) {
 							<circle cx="6" cy="18" r="3" />
 							<circle cx="18" cy="16" r="3" />
 						</svg>
-						<h3 className="text-sm font-medium text-blue-700 dark:text-gray-200 mx-2">학습</h3>
+						<h3 className="mx-2 text-sm font-medium text-blue-700 dark:text-gray-200">학습</h3>
 
 					</div>
 					<div className="mx-3">
@@ -45,7 +45,7 @@ export default function Card_Mini(second) {
 							<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
 						</svg>
 						<svg
-							className=" h-6 w-6 text-gray-500 dark:text-gray-400 ml-4"
+							className=" ml-4 h-6 w-6 text-gray-500 dark:text-gray-400"
 							fill="none"
 							height="24"
 							stroke="currentColor"
@@ -64,13 +64,13 @@ export default function Card_Mini(second) {
 
 					<div className="flex flex-col items-center justify-center">
 						<Image src="temp/temp.svg" alt={"picture of content"} width={200} height={200} className="mx-auto" />
-						<h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mt-2">당신의 이름은 무엇입니까? </h3>
+						<h3 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">당신의 이름은 무엇입니까? </h3>
 						<p className="text-gray-400"> 새로운 당신의 여행을 위한 솔루션 200!</p>
 					</div>
 				</div>
 				<div className="px-6 py-4">
 					<div className="flex justify-between">
-						<h1 className="text-blue-500 font-bold">30분</h1>
+						<h1 className="font-bold text-blue-500">30분</h1>
 						<h1 className="font-bold">$3500</h1>
 					</div>
 				</div>

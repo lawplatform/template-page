@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 interface ToggleMenuViaSizeProps {
 	msg: String
 }
-const ToggleMenuViaSize: React.Fc<ToggleMenuViaSizeProps> = ({ msg }) => {
+const ToggleMenuViaSize: React.FC<ToggleMenuViaSizeProps> = ({ msg }) => {
 	const [isMobile, setIsMobile] = useState(false);
 	useEffect(() => {
 		const handleResize = () => {
