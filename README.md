@@ -4,4 +4,5 @@
  - animejs
  - tanstack query
  - trpc
+ - legendState
  
