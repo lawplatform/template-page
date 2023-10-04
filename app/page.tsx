@@ -1,14 +1,6 @@
 "use client";
-import { Button } from '@/components/ui/button'
 import { trpc } from './_trpc/client'
-import SlideShow from '@/src/components/SlideShow';
-import Login from '@/src/components/login';
-import Card_gallery from '@/src/components/Card_gallery';
-import ToggleMenuViaSize from '@/src/components/ToggleMenuViaSize';
-import Drawer from '@/src/components/Drawer';
 import { useState } from 'react';
-import Card_Mini from "@/src/components/Card_Mini";
-import Divider from '@/src/components/Divider';
 import Card_list from '@/src/components/Card_list';
 
 export default function Home() {
