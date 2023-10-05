@@ -53,7 +53,7 @@ const Slide_Drag: React.FC<Slide_DragProps> = ({ children }) => {
 				<ArrowLeft color="black" />
 			</div>
 
-			<ul id="tabs" className="mx-auto flex gap-16 overflow-scroll px-6  scrollbar-hide ">
+			<ul id="tabs" className="mx-auto flex gap-16 overflow-scroll scroll-smooth  px-6 scrollbar-hide ">
 				{childItems}
 			</ul>
 
