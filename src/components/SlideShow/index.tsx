@@ -36,14 +36,14 @@ export default function SlideShow() {
 
 	return (
 
-		<div className="mx-auto overflow-hidden max-w-lg">
+		<div className="mx-auto max-w-lg overflow-hidden">
 			<div
-				className=" whitespace-nowrap transition-ease duration-1000"
+				className=" transition-ease whitespace-nowrap duration-1000"
 				style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
 			>
 				{colors.map((backgroundColor, index) => (
 					<div
-						className="w-full h-96 inline-block rounded-xl"
+						className="inline-block h-96 w-full rounded-xl"
 						key={index}
 						style={{ backgroundColor }}
 					></div>
