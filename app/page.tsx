@@ -16,7 +16,7 @@ export default function Home() {
 			{JSON.stringify(getTodos.data)}
 			<div className="flex flex-col  items-center">
 				<p className="bg-conssul-100 dark:bg-red-100">
-					hello. ... my name ..!{" "}
+					hello. ... my name ..
 				</p>
 				<Slide_Drag>
 					<A say="hello!" />

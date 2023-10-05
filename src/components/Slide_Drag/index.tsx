@@ -5,15 +5,13 @@ import './Slide.css'
 interface Slide_DragProps {
 	children: React.ReactNode;
 }
-
 const Slide_Drag: React.FC<Slide_DragProps> = ({ children }) => {
 	const childItems = React.Children.map(children, (child: ReactNode, index: number) => (
-		<li key={index} className="text-white">
+		<li key={index} >
 			<a>{child}</a>
 		</li>
 	));
 	useEffect(() => {
-
 		const tabsList = document.querySelector("#tabs");
 		const left = document.querySelector("#left");
 		const right = document.querySelector("#right")
@@ -50,12 +48,12 @@ const Slide_Drag: React.FC<Slide_DragProps> = ({ children }) => {
 	}, [])
 
 	return (
-		<div className="flex w-full flex-row overflow-hidden">
+		<div className="mx-auto  flex  w-full flex-row overflow-hidden ">
 			<div id="left" className="absolute ">
 				<ArrowLeft color="black" />
 			</div>
 
-			<ul id="tabs" className="mx-0 flex gap-16 overflow-scroll px-10">
+			<ul id="tabs" className="mx-auto flex gap-16 overflow-scroll px-6  scrollbar-hide ">
 				{childItems}
 			</ul>
 

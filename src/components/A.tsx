@@ -3,6 +3,6 @@ interface AProps {
 	say: string;
 }
 const A: React.FC<AProps> = ({ say }) => {
-	return <div className="text-black">{say}</div>;
+	return <div className="">{say}</div>;
 };
 export default A;
