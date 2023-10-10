@@ -20,7 +20,6 @@ export default function Home() {
 			<div className="flex flex-col  items-center">
 				<p className="bg-conssul-100 dark:bg-red-100">
 					hello. ... my name ..
-
 				</p>
 				<div className="h-fit w-3/4">
 					<Slide_Logo direction="right">
@@ -31,7 +30,6 @@ export default function Home() {
 						<Card_Profile />
 						<Card_Profile />
 						<Card_Profile />
-
 					</Slide_Logo>
 				</div>
 				<div className="w-3/4">

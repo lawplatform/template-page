@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react'
 import './Slide_Logo.css'
 
@@ -20,8 +20,6 @@ const Slide_Logo: React.FC<Slide_LogoProps> = ({ children, direction }) => {
 			scrollers.forEach((scroller) => {
 				scroller.setAttribute("data-animated", "true")
 				const Inner = scroller.querySelector(".scroller_inner");
-				console.log(Inner);
-
 				if (Inner != null) {
 					const Content = Array.from(Inner.children);
 					Content.forEach((item) => {
@@ -33,9 +31,12 @@ const Slide_Logo: React.FC<Slide_LogoProps> = ({ children, direction }) => {
 
 			})
 		}
+
+
+
 	}, [])
 	return (
-		<div className=" scroller my-5 mb-3 w-full overflow-x-hidden" data-speed="slow" data-direction={direction}>
+		<div className=" scroller isHovered ? 'hovered' : '' my-5 mb-3 w-full overflow-x-hidden" data-speed="slow" data-direction={direction}>
 			<ul className="tag-list scroller_inner mx-auto flex h-fit flex-row justify-center gap-3">
 				{childItems}
 			</ul>
