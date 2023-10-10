@@ -20,19 +20,15 @@ export default function Home() {
 					hello. ... my name ....?
 
 				</p>
-				<Slide_Logo >
-					<li>A</li>
-					<li>CSS</li>
-					<li>Two</li>
-					<li>Home</li>
-					<li>mymymy</li>
-					<li>CSS</li>
-					<li>Two</li>
-					<li>Home</li>
-					<li>CSS</li>
-					<li>Two</li>
-					<li>Last</li>
-				</Slide_Logo>
+				<div className="w-3/4">
+					<Slide_Logo >
+						<A say={"hey"}></A>
+						<A say={"hey"}></A>
+						<A say={"hey"}></A>
+						<A say={"hey"}></A>
+
+					</Slide_Logo>
+				</div>
 				<Card_list />
 			</div>
 		</div>
