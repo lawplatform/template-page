@@ -11,9 +11,6 @@
 .tag-list li:hover{
 	background:#F7F7F7;
 }
-
-
-
 .scroller{
 }
 
@@ -31,6 +28,11 @@ mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparen
 	flex-wrap:nowrap;
 	animation: scroll var(--_animation-duration,40s)
 	var(--_animation-direction,forwards) linear infinite;
+
+}
+
+.scroller[data-animated="true"] .scroller_inner:hover{
+	animation-play-state: paused;
 
 }
 

@@ -2,9 +2,6 @@
 import { trpc } from "./_trpc/client";
 import { useState } from "react";
 import Card_list from "@/src/components/Card_list";
-import C_Basic from "@/src/components/C_Basic";
-import Slide_Drag from "@/src/components/Slide_Drag";
-import A from "@/src/components/A";
 import Slide_Logo from "@/src/components/Slide_Logo/Slide_Logo";
 import Card_Profile from "@/src/components/Card_Profile";
 import Card_Profile_h from "@/src/components/Card_Profile_h";
