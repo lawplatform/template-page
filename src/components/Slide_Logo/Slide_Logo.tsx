@@ -5,9 +5,9 @@ import './Slide_Logo.css'
 
 interface Slide_LogoProps {
 	children: React.ReactNode;
+	direction: string;
 }
-const Slide_Logo: React.FC<Slide_LogoProps> = ({ children }) => {
-	//export default function Slide_Logo({ children }): React.FC<Slide_LogoProps> {
+const Slide_Logo: React.FC<Slide_LogoProps> = ({ children, direction }) => {
 	const childItems =
 		React.Children.map(children, (child, index) => (<li key={index}>{child}</li>));
 	useEffect(() => {
@@ -20,6 +20,8 @@ const Slide_Logo: React.FC<Slide_LogoProps> = ({ children }) => {
 			scrollers.forEach((scroller) => {
 				scroller.setAttribute("data-animated", "true")
 				const Inner = scroller.querySelector(".scroller_inner");
+				console.log(Inner);
+
 				if (Inner != null) {
 					const Content = Array.from(Inner.children);
 					Content.forEach((item) => {
@@ -33,8 +35,8 @@ const Slide_Logo: React.FC<Slide_LogoProps> = ({ children }) => {
 		}
 	}, [])
 	return (
-		<div className=" scroller my-5 w-full overflow-x-hidden" data-speed="slow">
-			<ul className="tag-list scroller_inner mx-auto flex flex-row justify-center gap-3">
+		<div className=" scroller my-5 mb-3 w-full overflow-x-hidden" data-speed="slow" data-direction={direction}>
+			<ul className="tag-list scroller_inner mx-auto flex h-fit flex-row justify-center gap-3">
 				{childItems}
 			</ul>
 		</div>
