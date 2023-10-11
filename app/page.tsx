@@ -7,6 +7,7 @@ import Card_Profile from "@/src/components/Card_Profile";
 import Card_Profile_h from "@/src/components/Card_Profile_h";
 import Parallax from "@/src/components/parallax/Parallax";
 import Gallery_anime from "@/src/components/Gallery_anime";
+import Card_Mini from "@/src/components/Card_Mini";
 
 export default function Home() {
 

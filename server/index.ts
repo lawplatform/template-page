@@ -21,7 +21,6 @@ export const appRouter = router({
 			const result = files.filter((file: string) => path.extname(file) === '.jpg');
 			return JSON.stringify(result);
 		} catch (err) {
-			console.error("error occurred", err);
 			return JSON.stringify([]);
 		}
 	}),
