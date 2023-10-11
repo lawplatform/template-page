@@ -6,20 +6,24 @@ import Slide_Logo from "@/src/components/Slide_Logo/Slide_Logo";
 import Card_Profile from "@/src/components/Card_Profile";
 import Card_Profile_h from "@/src/components/Card_Profile_h";
 import Parallax from "@/src/components/parallax/Parallax";
+import Gallery_anime from "@/src/components/Gallery_anime";
 
 export default function Home() {
-	const getTodos = trpc.getTodos.useQuery();
 
+	const getTodos = trpc.getTodos.useQuery();
+	const getImages = trpc.getImages.useQuery();
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
 		<div>
 			{JSON.stringify(getTodos.data)}
+			<div>is images loading?</div>
+			{JSON.stringify(getImages.data)}
 			<div className="flex flex-col  items-center">
 				<p className="bg-conssul-100 dark:bg-red-100">
 					hello. ... my name ..?
 				</p>
-				<Parallax></Parallax>
+				<Gallery_anime></Gallery_anime>
 				<div className="h-fit w-3/4">
 					<Slide_Logo direction="right" speed={"st"}>
 						<Card_Profile />
