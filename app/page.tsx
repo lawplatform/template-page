@@ -5,6 +5,7 @@ import Card_list from "@/src/components/Card_list";
 import Slide_Logo from "@/src/components/Slide_Logo/Slide_Logo";
 import Card_Profile from "@/src/components/Card_Profile";
 import Card_Profile_h from "@/src/components/Card_Profile_h";
+import Parallax from "@/src/components/parallax/Parallax";
 
 export default function Home() {
 	const getTodos = trpc.getTodos.useQuery();
@@ -16,10 +17,11 @@ export default function Home() {
 			{JSON.stringify(getTodos.data)}
 			<div className="flex flex-col  items-center">
 				<p className="bg-conssul-100 dark:bg-red-100">
-					hello. ... my name ..
+					hello. ... my name ..?
 				</p>
+				<Parallax></Parallax>
 				<div className="h-fit w-3/4">
-					<Slide_Logo direction="right">
+					<Slide_Logo direction="right" speed={"st"}>
 						<Card_Profile />
 						<Card_Profile />
 						<Card_Profile />
@@ -30,7 +32,7 @@ export default function Home() {
 					</Slide_Logo>
 				</div>
 				<div className="w-3/4">
-					<Slide_Logo direction="left">
+					<Slide_Logo direction="left" speed={"slow"}>
 						<Card_Profile_h />
 						<Card_Profile_h />
 						<Card_Profile_h />
@@ -38,7 +40,6 @@ export default function Home() {
 						<Card_Profile_h />
 						<Card_Profile_h />
 						<Card_Profile_h />
-
 					</Slide_Logo>
 				</div>
 				<Card_list />

@@ -6,6 +6,7 @@ import './Slide_Logo.css'
 interface Slide_LogoProps {
 	children: React.ReactNode;
 	direction: string;
+	speed: string;
 }
 const Slide_Logo: React.FC<Slide_LogoProps> = ({ children, direction }) => {
 	const childItems =
@@ -31,9 +32,6 @@ const Slide_Logo: React.FC<Slide_LogoProps> = ({ children, direction }) => {
 
 			})
 		}
-
-
-
 	}, [])
 	return (
 		<div className=" scroller isHovered ? 'hovered' : '' my-5 mb-3 w-full overflow-x-hidden" data-speed="slow" data-direction={direction}>

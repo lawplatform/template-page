@@ -17,8 +17,7 @@
 .scroller[data-animated="true"]{
 	overflow:hidden;
 	-webkit-mask-image: linear-gradient(90deg, transparent, black 20%, black 80%, transparent);
-mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-    
+    mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);  
 }
 
 
@@ -46,10 +45,10 @@ mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparen
 
 
 .scroller[data-speed="fast"]{
-	--_animation-duration:20s;
+	--_animation-duration:50s;
 }
 .scroller[data-speed="slow"]{
-		--_animation-duration:10s;
+		--_animation-duration:40s;
 }
 
 @keyframes scroll{

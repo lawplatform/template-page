@@ -16,6 +16,11 @@ module.exports = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				roboto: ['var(--font-roboto-mono)'],
+				sans: ["var(--font-opensans)"],
+				dm: ["var(--font-dm-serif)"]
+			},
 			colors: {
 				mainColor: `#6064d4`,
 				conssul: "hsr(var(--conssul))",

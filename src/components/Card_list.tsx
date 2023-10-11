@@ -45,7 +45,7 @@ export default function Card_list() {
 					</div>
 					<p className="text-1 text-start font-semibold text-zinc-900 dark:text-zinc-50">￦2500 / 30분 </p>
 					<p className="text-xs text-zinc-500 dark:text-zinc-400">
-						주의 : 거래시 주의 문구에 대한 설명..
+						주의 : 거래시 주의 문구에 대한 설명..!
 					</p>
 
 					<div className="mb-12">this is footer</div>
