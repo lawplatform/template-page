@@ -8,6 +8,9 @@ import Card_Profile_h from "@/src/components/Card_Profile_h";
 import Parallax from "@/src/components/parallax/Parallax";
 import Gallery_anime from "@/src/components/Gallery_anime";
 import Card_Mini from "@/src/components/Card_Mini";
+import Gallery_basic from "@/src/components/Gallery_basic";
+import { TiltSquare } from "@/src/components/background";
+import Article_With_Scroll from "@/src/page/Article_with_Scroll";
 
 export default function Home() {
 
@@ -17,6 +20,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<Article_With_Scroll />
 			{JSON.stringify(getTodos.data)}
 			<div>is images loading?</div>
 			{JSON.stringify(getImages.data)}
@@ -24,7 +28,7 @@ export default function Home() {
 				<p className="bg-conssul-100 dark:bg-red-100">
 					hello. ... my name ..?
 				</p>
-				<Gallery_anime></Gallery_anime>
+				<TiltSquare />
 				<div className="h-fit w-3/4">
 					<Slide_Logo direction="right" speed={"st"}>
 						<Card_Profile />
