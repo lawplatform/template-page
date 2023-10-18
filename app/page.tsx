@@ -11,6 +11,8 @@ import Card_Mini from "@/src/components/Card_Mini";
 import Gallery_basic from "@/src/components/Gallery_basic";
 import { TiltSquare } from "@/src/components/background";
 import Article_With_Scroll from "@/src/page/Article_with_Scroll";
+import Login from "@/src/components/login";
+import Login_basic from "@/src/components/Login_basic";
 
 export default function Home() {
 
@@ -20,6 +22,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<Login_basic />
 			<Article_With_Scroll />
 			{JSON.stringify(getTodos.data)}
 			<div>is images loading?</div>
