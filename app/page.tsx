@@ -13,6 +13,7 @@ import { TiltSquare } from "@/src/components/background";
 import Article_With_Scroll from "@/src/page/Article_with_Scroll";
 import Login from "@/src/components/login";
 import Login_basic from "@/src/components/Login_basic";
+import C_Flip_3d from "@/src/components/C_Flip_3d.tsx";
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<C_Flip_3d />
 			<Login_basic />
 			<Article_With_Scroll />
 			{JSON.stringify(getTodos.data)}
