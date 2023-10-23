@@ -1,63 +1,66 @@
 "use client";
 import { trpc } from "./_trpc/client";
 import { useState } from "react";
-import Card_list from "@/src/components/Card_list";
-import Slide_Logo from "@/src/components/Slide_Logo/Slide_Logo";
-import Card_Profile from "@/src/components/Card_Profile";
-import Card_Profile_h from "@/src/components/Card_Profile_h";
-import Parallax from "@/src/components/parallax/Parallax";
-import Gallery_anime from "@/src/components/Gallery_anime";
-import Card_Mini from "@/src/components/Card_Mini";
-import Gallery_basic from "@/src/components/Gallery_basic";
-import { TiltSquare } from "@/src/components/background";
-import Article_With_Scroll from "@/src/page/Article_with_Scroll";
-import Login from "@/src/components/login";
-import Login_basic from "@/src/components/Login_basic";
-import C_Flip_3d from "@/src/components/C_Flip_3d.tsx";
+import { Nanum } from "./font"
+import { signIn, signOut, useSession } from "next-auth/react";
+import C_info from "@/src/components/card/C_info";
+import { CircleDollarSign, Heart, User } from "lucide-react";
+
 
 export default function Home() {
-
 	const getTodos = trpc.getTodos.useQuery();
 	const getImages = trpc.getImages.useQuery();
 	const [isOpen, setIsOpen] = useState(false);
-
+	const { data: session } = useSession();
 	return (
-		<div>
-			<C_Flip_3d />
-			<Login_basic />
-			<Article_With_Scroll />
-			{JSON.stringify(getTodos.data)}
-			<div>is images loading?</div>
-			{JSON.stringify(getImages.data)}
-			<div className="flex flex-col  items-center">
-				<p className="bg-conssul-100 dark:bg-red-100">
-					hello. ... my name ..?
-				</p>
-				<TiltSquare />
-				<div className="h-fit w-3/4">
-					<Slide_Logo direction="right" speed={"st"}>
-						<Card_Profile />
-						<Card_Profile />
-						<Card_Profile />
-						<Card_Profile />
-						<Card_Profile />
-						<Card_Profile />
-						<Card_Profile />
-					</Slide_Logo>
-				</div>
-				<div className="w-3/4">
-					<Slide_Logo direction="left" speed={"slow"}>
-						<Card_Profile_h />
-						<Card_Profile_h />
-						<Card_Profile_h />
-						<Card_Profile_h />
-						<Card_Profile_h />
-						<Card_Profile_h />
-						<Card_Profile_h />
-					</Slide_Logo>
-				</div>
-				<Card_list />
+
+		<div className="mx-auto ml-2 mt-5 flex w-full flex-col  sm:px-36">
+			<h3 className="font-noto   mb-3 w-80 bg-black text-6xl text-white">Dashboard</h3>
+			<div className="grid w-full grid-cols-1 gap-5  md:grid-cols-2 lg:grid-cols-3">
+
+				<C_info title={"수익"} number={2500} des={"이번달 수익"}>
+					<CircleDollarSign className="h-20 w-20" />
+				</C_info>
+				<C_info title={"상담"} number={34} des={"이번달 수익"}>
+					<User className="h-20 w-20" />
+				</C_info>
+				<C_info title={"선호"} number={120} des={"많은 분들이 좋아해주셨어요"}>
+					<Heart className="h-20 w-20" />
+				</C_info>
 			</div>
-		</div>
-	);
+			<div>
+				Current Information
+			</div>
+			<div>
+			</div>
+			<div>
+				메모 is not my memo
+			</div>
+			<div>
+				정보 - 총방문 , 수익, 좋아요
+			</div>
+			<div>약속 </div>
+
+			<button onClick={() => signIn()}>
+				Sign In
+			</button>
+
+			<button onClick={() => signOut()}>
+				Sign Out
+			</button>
+			{session?.user ? (
+				<>
+					<img
+						className="h-8 w-8 rounded-full"
+						src={session.user.image || ""}
+					/>
+					<p className="text-sky-600"> {session.user.email}</p>
+				</>) : (
+				<div> you shold login this stage</div>
+			)
+			}
+		</div >
+
+
+	)
 }

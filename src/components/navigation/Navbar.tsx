@@ -26,10 +26,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import { AlignJustify } from "lucide-react";
-import Divider_h from "./Divider_h";
-import { B_ThemeToggler } from "./B_ThemeToggler";
 import { useTheme } from "next-themes";
-import Logo from "./Logo";
+import Divider_h from "../Divider_h";
+import { B_ThemeToggler } from "../B_ThemeToggler";
+import Logo from "../Logo";
 const ListItem = React.forwardRef<
 	React.ElementRef<"a">,
 	React.ComponentPropsWithoutRef<"a">

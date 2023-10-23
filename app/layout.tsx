@@ -2,10 +2,13 @@ import QueryProvider from '@/src/utils/QueryProvider';
 import './globals.css'
 import type { Metadata } from 'next'
 import Provider from './_trpc/Provider';
-import Navbar from '@/src/components/Navbar';
+import Navbar from '@/src/components/navigation/Navbar';
 import { ThemeProvider } from '@/src/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
-import { Open_Sans, Roboto_Mono, DM_Serif_Text } from 'next/font/google'
+import { Open_Sans, Roboto_Mono, DM_Serif_Text, Noto_Sans, Nanum_Gothic } from 'next/font/google'
+import AuthSession from '@/src/utils/AuthSession';
+import N_vertical from '@/src/components/navigation/N_vertical';
+
 
 const openSans = Open_Sans({
 	subsets: ['latin'],
@@ -25,7 +28,19 @@ const dm_serif = DM_Serif_Text({
 	variable: '--font-dm-serif',
 	weight: '400',
 })
+const Nanum = Nanum_Gothic({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-nanum',
+	weight: '400',
+})
 
+const noto = Noto_Sans({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-noto-sans',
+	weight: '200',
+})
 export const metadata: Metadata = {
 	title: 'name',
 	description: 'what we do..',
@@ -68,12 +83,15 @@ export default function RootLayout({
 						enableSystem
 						disableTransitionOnChange
 					>
-						<div className="flex-flex-col text-center">
-							<div className='h-20 '><Navbar /></div>
-							<div >
-								{children}
+						<AuthSession>
+							<div className="flex flex-row text-center">
+								<div className='h-20 w-52 '><N_vertical /></div>
+								<div className='w-full' >
+									<Navbar></Navbar>
+									{children}
+								</div>
 							</div>
-						</div>
+						</AuthSession>
 						<Toaster />
 					</ThemeProvider>
 				</Provider>
