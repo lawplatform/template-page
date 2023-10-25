@@ -3,7 +3,7 @@
  * @see https://v0.dev/t/Xx6DE3L
  */
 import { Button } from "@/components/ui/button"
-import Star from "./Star"
+import Star from "../Star"
 
 export default function Card_list() {
 	return (

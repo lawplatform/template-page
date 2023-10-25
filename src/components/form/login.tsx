@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { User2, Lock } from "lucide-react";
-import { supabase } from "../utils/supabase";
+import { supabase } from "../../utils/supabase";
 
 const formSchema = z.object({
 	username: z.string().min(2, { message: "2글자 이상이어야 합니다" }).max(50),

@@ -3,17 +3,25 @@ interface C_infoProps {
 	title: string;
 	number: number;
 	des: string;
+	color: string;
 	children: React.ReactNode;
+
 }
-export default function C_info({ title, number, des, children }: C_infoProps) {
+export default function C_info({ title, number, des, children, color }: C_infoProps) {
+	const style = {
+		background: color
+	}
 	return (
-		<div className="mb-10 flex translate-y-4 transform flex-col items-center gap-3 rounded-2xl border-2 border-solid border-gray-200 px-8 py-10 pb-10 shadow-xl transition duration-300 ease-in-out hover:translate-y-0">
-			{children}
-			<div className="text-4xl font-bold">
-				<NumberAnimation value={number} />
+		<div className="my-2 flex flex-row rounded  p-4 shadow-md">
+			<div style={style} className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl">
+				{children}
 			</div>
-			<p className="text-dark-grey-900 text-2xl font-extrabold">{title}</p>
-			<a className="text-1g text-gray-400" href="mailto: hello@loopple.com">{des}</a>
+			<div className="ml-4 flex flex-grow flex-col">
+				<div className="text-md font-bold text-gray-500">{title}</div>
+				<div className="text-lg font-bold">
+					<NumberAnimation value={number} />
+				</div>
+			</div>
 		</div>
 	)
 }

@@ -9,7 +9,12 @@ import { Open_Sans, Roboto_Mono, DM_Serif_Text, Noto_Sans, Nanum_Gothic } from '
 import AuthSession from '@/src/utils/AuthSession';
 import N_vertical from '@/src/components/navigation/N_vertical';
 
-
+const noto = Noto_Sans({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-noto',
+	weight: '400',
+})
 const openSans = Open_Sans({
 	subsets: ['latin'],
 	display: 'swap',
@@ -28,19 +33,13 @@ const dm_serif = DM_Serif_Text({
 	variable: '--font-dm-serif',
 	weight: '400',
 })
-const Nanum = Nanum_Gothic({
+const nanum = Nanum_Gothic({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-nanum',
 	weight: '400',
 })
 
-const noto = Noto_Sans({
-	subsets: ['latin'],
-	display: 'swap',
-	variable: '--font-noto-sans',
-	weight: '200',
-})
 export const metadata: Metadata = {
 	title: 'name',
 	description: 'what we do..',
@@ -74,7 +73,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
-		<html lang="en" className={`${openSans.variable} ${robotoMono.variable} ${dm_serif.variable} font-sans`}>
+		<html lang="en" className={`${openSans.variable} ${robotoMono.variable} ${dm_serif.variable} ${nanum.variable} ${noto.variable} font-nanum`}>
 			<body >
 				<Provider>
 					<ThemeProvider
@@ -85,9 +84,8 @@ export default function RootLayout({
 					>
 						<AuthSession>
 							<div className="flex flex-row text-center">
-								<div className='h-20 w-52 '><N_vertical /></div>
+								<div className='hidden sm:block'><N_vertical /></div>
 								<div className='w-full' >
-									<Navbar></Navbar>
 									{children}
 								</div>
 							</div>
