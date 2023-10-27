@@ -17,7 +17,7 @@ export default function C_info({ title, number, des, children, color }: C_infoPr
 				{children}
 			</div>
 			<div className="ml-4 flex flex-grow flex-col">
-				<div className="text-md font-bold text-gray-500">{title}</div>
+				<div className="text-md font-noto font-bold text-gray-500">{title}</div>
 				<div className="text-lg font-bold">
 					<NumberAnimation value={number} />
 				</div>

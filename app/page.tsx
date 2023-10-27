@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import C_info from "@/src/components/card/C_info";
 import { CircleDollarSign, Heart, User } from "lucide-react";
 import Ch_line from "@/src/components/chart/Ch_line";
+import Write from "@/src/components/form/write";
 
 export default function Home() {
 	const getTodos = trpc.getTodos.useQuery();
@@ -14,21 +15,21 @@ export default function Home() {
 	const { data: session } = useSession();
 	return (
 		<div className="mx-auto max-w-5xl justify-items-start text-start">
-			<h1 className="text-start text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
-				정보!
+			<h1 className=" text-start font-noto text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
+				정보
 			</h1>
 			<span className="max-w-[750px] text-lg text-muted-foreground sm:text-xl">
 				각종 정보 표시
 			</span>
+
+			<Write></Write>
 			<section>
 				<h1 className="mb-2 text-2xl">일정</h1>
 				<div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
 					<div className="rounded-xl border bg-card text-card-foreground shadow">
-						{" "}
 						오늘 일정{" "}
 					</div>
 					<div className="rounded-xl border bg-card text-card-foreground shadow">
-						{" "}
 						목표{" "}
 					</div>
 				</div>
